@@ -10,8 +10,43 @@
 <body>
     <header>
         <h2>Finally, A Fundraiser That Works Harder Than You!</h2>
+        <nav></nav>
     </header>
-    <main></main>
+    <main>
+        <form>
+            <label for="first-name">First Name:</label>
+            <input id ="first-name"type ="text"name ="first-name"placeholder="First">
+            <label for="last-name">Last Name:</label>
+            <input id="last-name"type ="text"name ="last-name"placeholder="Last">
+            <label for="email">Email:</label>
+            <input id = "email"type ="text"name ="email"placeholder="Email">
+            <label for="phone">Phone Number:</label>
+            <input id = "phone"type ="text"name ="phone" type ="tel" placeholder="Phone Number">
+            <h3>What instrument group are they in?</h3>
+                <select name="subgroup">
+                <option value="Flute/Piccolo" selected>Flutes/Piccolos</option>
+                <option value="Clarinet/BassClarinet">Clarinets/BassClarinets</option>
+                <option value="DblReeds">DblReeds</option>
+                <option value="Saxes">Saxes</option>
+                <option value="Trumpet">Trumpets</option>
+                <option value="Horns">Horns</option>
+                <option value="Trombone">Trombones</option>
+                <option value="Euphoniums/Tubas">Euphoniums/Tubas</option>
+                <option value="Percussion">Percussion</option>
+                <option value="Colorguard">Colorguard</option>
+                </select>
+            <input type ="submit" value="Add student" />
+        </form>
+        <section id = "filters">
+            <h3>Filters:</h3>
+                <button id="filterByLastNameBtn">Filter by Last Name</button>
+                <button id="filterByInstrumentBtn">Filter by Instrument</button>
+                <button id="filterByDonations">Filter by Donations (highest first)</button>
+        </section>
+        
+
+
+    </main>
     <footer></footer>
     
 </body>
