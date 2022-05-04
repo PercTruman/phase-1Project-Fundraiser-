@@ -1,3 +1,35 @@
 html{
-    font-family: 'Bangers', cursive;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}
+body {
+    margin: 0;
+}
+
+header {
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: white;
+    text-align: center;
+    height: 4rem;
+    padding: 2em;
+}
+main {
+    margin: 0 auto;
+    background-image: url('assets/summit-band-logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 33%;
+}
+h2 {
+    margin:0 auto;
+    font-size: 2.5rem;
+    
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-top: 2rem;
 }
