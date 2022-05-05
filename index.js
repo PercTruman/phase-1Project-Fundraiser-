@@ -10,6 +10,7 @@ const newMemberForm=document.getElementById('new-member-form')
 const studentStatsInput=document.getElementById('student-stats-input')
 const instrumentTotals=document.getElementById('instrumentTotalsBtn')
 const donationsRanker=document.getElementById('donationsRanker')
+const reloadBtn=document.getElementById('refreshBtn').addEventListener('click', ()=>location.reload())
 
 
 newMemberForm.addEventListener('submit',
@@ -60,7 +61,6 @@ function searchStudents(input){
 }
 
   function displayFoundStudent(member){
-      console.log(member)
       let first = member.firstname
       let last = member.lastname
       let email= member.email
@@ -92,10 +92,4 @@ function searchStudents(input){
             ${nameDisplay}<br>
             ${emailText.innerText}<br>
             ${phoneText.innerText}`
-
-            // statDisplayDiv.append(nameDisplay)
-            // statDisplayDiv.append(emailText.innerText)
-            // statDisplayDiv.append(phoneText.innerText)
-
-
   }
