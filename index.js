@@ -5,10 +5,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 let memberArray =[]
-console.log(memberArray)
 
 const newMemberForm=document.getElementById('new-member-form')
-const studentStatsBtn=document.getElementById('student-stats-btn')
+const studentStatsInput=document.getElementById('student-stats-input')
 const instrumentTotals=document.getElementById('instrumentTotalsBtn')
 const donationsRanker=document.getElementById('donationsRanker')
 
@@ -45,11 +44,51 @@ function postNewMember(memberObject){
     .then(member=> alert(member.firstname +` has been successfully added.`))
 }
 
-studentStatsBtn.addEventListener('click', getStudentStats)
+studentStatsInput.addEventListener('keypress', (e)=>{
+    let input = e.target.value.toLowerCase()
+        if (e.key === 'Enter'){
+            searchStudents(input)
+        }
+    })
 
-function getStudentStats(){
-   let enteredStudent = prompt('Enter a student\'s last name:')
-   const foundMember =memberArray.find(member=>member.lastname===enteredStudent)
-   console.log(foundMember)
-  
+function searchStudents(input){
+    memberArray.forEach(member=>{
+        if (member.lastname.toLowerCase() ===input){
+            displayFoundStudent(member)
+        }
+    })
 }
+
+  function displayFoundStudent(member){
+      console.log(member)
+      let first = member.firstname
+      let last = member.lastname
+      let email= member.email
+      let phone =member.phonenumber
+
+
+        donationsRanker.style.display = "none"
+        instrumentTotals.style.display ="none"
+
+        let statDisplayDiv = document.createElement('div')
+        statDisplayDiv.id= 'statDisplayDiv'
+
+        let firstnameText = document.createElement('h4')
+            firstnameText.innerText= first
+
+        let lastnameText = document.createElement('h4')
+            lastnameText.innerText= last
+
+        let nameDisplay = firstnameText.innerText + ' ' + lastnameText.innerText+ "  "
+
+        let emailText=document.createElement('h3')
+            emailText.innerText=email
+
+        let phoneText=document.createElement('h3')
+            phoneText.innerText=phone
+      
+        studentStatsInput.append(statDisplayDiv)
+            statDisplayDiv.append(nameDisplay, emailText.innerText, phoneText.innerText)
+
+
+  }
