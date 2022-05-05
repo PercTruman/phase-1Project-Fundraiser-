@@ -119,8 +119,21 @@ function sumTotalByInstrument(input){
 
   function displayInstrumentTotal(runningTotal){
         donationsRanker.style.display = "none"
+
         let instrumentDonationElement= document.getElementById('instrumentTotalTool')
         let instrumentDonations =document.createElement('h2')
+
         instrumentDonations.innerText=runningTotal
-        instrumentDonationElement.append(instrumentDonations.innerText, ' dollars')
+        instrumentDonationElement.append('$ ',instrumentDonations.innerText)
   }
+
+  donationsRanker.addEventListener('click', ()=>{
+     let rankedDiv= document.createElement('div')
+      memberArray.sort((a,b)=> b.donations - a.donations)
+      memberArray.forEach(member=>{
+         let memberHeader= document.createElement('h5')
+         memberHeader.innerText=`${member.firstname} ${member.lastname} ${member.donations}`
+         donationsRanker.append(rankedDiv)
+      })
+  })
+  
