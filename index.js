@@ -9,7 +9,6 @@ const newMemberForm=document.getElementById('new-member-form')
 
 newMemberForm.addEventListener('submit',
     (e)=>{
-        e.preventDefault() 
         let firstNameField=e.target[0].value
         let lastNameField=e.target[1].value
         let emailField=e.target[2].value

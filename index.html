@@ -13,7 +13,7 @@
         <h1>Finally, A Fundraiser That Works As Hard As You Do</h1>
         <nav></nav>
     </header>
-    <main>
+    <main id="container">
         <form id="new-member-form">
             <h2>Add student to database:</h2>
             <label for="first-name">First Name:</label>
@@ -39,20 +39,16 @@
                 </select>
                 <input id ="addStudentBtn" type ="submit" value="Add student"/>
         </form>
-        <section id = "filters">
+        <section id = "tools">
             <h3>Filters:</h3>
-                <div id="name-filters">
-                    <button>Find Student By Last Name</button>
-                    <button id="filterByLastNameBtn">Filter by Last Name</button>
+                <div id="student-name-finder">
+                    <button>Get Student Stats By Last Name</button>
                 </div>
                 <div id="other-filters">
-                    <button id="filterByInstrumentBtn">Filter by Instrument</button>
+                    <button id="filterByInstrumentBtn">Get Donation Totals by Instrument</button>
                     <button id="filterByDonations">Filter by Donations (highest first)</button>
                 </div>  
         </section>
-        
-
-
     </main>
     <footer></footer>
    <script src="index.js"></script> 
