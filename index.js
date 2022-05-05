@@ -17,10 +17,10 @@ newMemberForm.addEventListener('submit',
         let subcategoryField=e.target[4].value
         
         let memberObject={
-            firstname: firstNameField,
-            lastname: lastNameField,
+            first name: firstNameField,
+            last name: lastNameField,
             email: emailField,
-            phonenumber: phoneField,
+            phone number: phoneField,
             instrument: subcategoryField
         }
         postNewMember(memberObject)
