@@ -119,10 +119,8 @@ function sumTotalByInstrument(input){
 
   function displayInstrumentTotal(runningTotal){
         donationsRanker.style.display = "none"
-        let statDisplayDiv = document.createElement('div')
-        statDisplayDiv.id = 'statDisplayDiv'
+        let instrumentDonationElement= document.getElementById('instrumentTotalTool')
         let instrumentDonations =document.createElement('h2')
         instrumentDonations.innerText=runningTotal
-        // statDisplayDiv.append(instrumentDonations)
-       statDisplayDiv.append(instrumentDonations.innerText)
+        instrumentDonationElement.append(instrumentDonations.innerText, ' dollars')
   }
