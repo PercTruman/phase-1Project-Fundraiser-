@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     fetch('http://localhost:3000/users')
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(members=>members.forEach(member=>memberArray.push(member)))
 })
+
+let memberArray =[]
+console.log(memberArray)
 
 const newMemberForm=document.getElementById('new-member-form')
 const studentStatsBtn=document.getElementById('student-stats-btn')
@@ -36,8 +39,17 @@ function postNewMember(memberObject){
             'Content-Type': 'application/json',
             Accept: 'application/json'
     },
-        body:JSON.stringify(memberObject)sd
+        body:JSON.stringify(memberObject)
 })
     .then(res=>res.json())
     .then(member=> alert(member.firstname +` has been successfully added.`))
+}
+
+studentStatsBtn.addEventListener('click', getStudentStats)
+
+function getStudentStats(){
+   let enteredStudent = prompt('Enter a student\'s last name:')
+   const foundMember =memberArray.find(member=>member.lastname===enteredStudent)
+   console.log(foundMember)
+  
 }
