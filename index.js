@@ -8,7 +8,7 @@ let memberArray =[]
 
 const newMemberForm=document.getElementById('new-member-form')
 const studentStatsInput=document.getElementById('student-stats-input')
-const instrumentTotals=document.getElementById('instrumentTotalsBtn')
+const instrumentTotals=document.getElementById('subgroup')
 const donationsRanker=document.getElementById('donationsRanker')
 const reloadBtn=document.getElementById('refreshBtn').addEventListener('click', ()=>location.reload())
 
@@ -20,7 +20,7 @@ newMemberForm.addEventListener('submit',
         let emailField=e.target[2].value
         let phoneField=e.target[3].value
         let startingAmountField=e.target[4].value
-        let subcategoryField=e.target[4].value
+        let subcategoryField=e.target[5].value
         
         let memberObject={
             firstname: firstNameField,
@@ -67,6 +67,7 @@ function searchStudents(input){
       let last = member.lastname
       let email= member.email
       let phone =member.phonenumber
+      let donations=member.donations
 
 
         donationsRanker.style.display = "none"
@@ -88,10 +89,40 @@ function searchStudents(input){
 
         let phoneText=document.createElement('h3')
             phoneText.innerText=phone
+
+        let donationText=document.createElement('h3')
+            donationText.innerText=donations
       
         studentStatsInput.append(statDisplayDiv)
             statDisplayDiv.innerHTML = `
             ${nameDisplay}<br>
             ${emailText.innerText}<br>
-            ${phoneText.innerText}`
+            ${phoneText.innerText}<br>
+            ${donationText.innerText}`
+  }
+      
+instrumentTotals.addEventListener('change', (e)=>{
+    let input = e.target.value
+           sumTotalByInstrument(input)
+})
+
+function sumTotalByInstrument(input){
+    let runningTotal = 0
+    memberArray.forEach(member=>{
+        if (member.instrument==input){
+            runningTotal+=member.donations
+        }
+      
+    })
+    displayInstrumentTotal(runningTotal)
+}
+
+  function displayInstrumentTotal(runningTotal){
+        donationsRanker.style.display = "none"
+        let statDisplayDiv = document.createElement('div')
+        statDisplayDiv.id = 'statDisplayDiv'
+        let instrumentDonations =document.createElement('h2')
+        instrumentDonations.innerText=runningTotal
+        // statDisplayDiv.append(instrumentDonations)
+       statDisplayDiv.append(instrumentDonations.innerText)
   }
