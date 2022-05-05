@@ -71,7 +71,7 @@ function searchStudents(input){
         instrumentTotals.style.display ="none"
 
         let statDisplayDiv = document.createElement('div')
-        statDisplayDiv.id= 'statDisplayDiv'
+        statDisplayDiv.id = 'statDisplayDiv'
 
         let firstnameText = document.createElement('h4')
             firstnameText.innerText= first
@@ -88,7 +88,14 @@ function searchStudents(input){
             phoneText.innerText=phone
       
         studentStatsInput.append(statDisplayDiv)
-            statDisplayDiv.append(nameDisplay, emailText.innerText, phoneText.innerText)
+            statDisplayDiv.innerHTML = `
+            ${nameDisplay}<br>
+            ${emailText.innerText}<br>
+            ${phoneText.innerText}`
+
+            // statDisplayDiv.append(nameDisplay)
+            // statDisplayDiv.append(emailText.innerText)
+            // statDisplayDiv.append(phoneText.innerText)
 
 
   }
