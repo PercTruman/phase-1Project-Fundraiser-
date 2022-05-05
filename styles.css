@@ -37,8 +37,7 @@ h1 {
     font-size: 2.5rem;
     
 }
-form {
-    /* border: 1px solid red; */
+form, #name-filters, #other-filters {
     display: flex;
     flex-direction: column;
     align-items: center;
