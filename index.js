@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 const newMemberForm=document.getElementById('new-member-form')
+const studentStatsBtn=document.getElementById('student-stats-btn')
+const instrumentTotals=document.getElementById('instrumentTotalsBtn')
+const donationsRanker=document.getElementById('donationsRanker')
 
 
 newMemberForm.addEventListener('submit',
@@ -33,7 +36,7 @@ function postNewMember(memberObject){
             'Content-Type': 'application/json',
             Accept: 'application/json'
     },
-        body:JSON.stringify(memberObject)
+        body:JSON.stringify(memberObject)sd
 })
     .then(res=>res.json())
     .then(member=> alert(member.firstname +` has been successfully added.`))

@@ -53,7 +53,7 @@ form input {
     margin-bottom: 1em;
     }
 
-#addStudentBtn {
+#addStudentBtn, button{
     font-weight: bold;
     background-color: crimson;
     border: none;
@@ -63,4 +63,9 @@ form input {
     letter-spacing: 1px;
     text-decoration: solid;
     cursor: pointer;
+    border-radius: 10px;
+}
+#addStudentBtn:hover, button:hover{
+    background-color: aqua;
+    color: black
 }
