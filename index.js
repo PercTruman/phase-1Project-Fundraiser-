@@ -19,6 +19,7 @@ newMemberForm.addEventListener('submit',
         let lastNameField=e.target[1].value
         let emailField=e.target[2].value
         let phoneField=e.target[3].value
+        let startingAmountField=e.target[4].value
         let subcategoryField=e.target[4].value
         
         let memberObject={
@@ -26,6 +27,7 @@ newMemberForm.addEventListener('submit',
             lastname: lastNameField,
             email: emailField,
             phonenumber: phoneField,
+            donations: startingAmountField,
             instrument: subcategoryField
         }
         postNewMember(memberObject)
@@ -79,7 +81,7 @@ function searchStudents(input){
         let lastnameText = document.createElement('h4')
             lastnameText.innerText= last
 
-        let nameDisplay = firstnameText.innerText + ' ' + lastnameText.innerText+ "  "
+        let nameDisplay = firstnameText.innerText + ' ' + lastnameText.innerText
 
         let emailText=document.createElement('h3')
             emailText.innerText=email

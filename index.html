@@ -24,18 +24,21 @@
             <input id = "email"type ="text"name ="email"placeholder="Email">
             <label for="phone">Phone Number:</label>
             <input id = "phone"type ="text"name ="phone" type ="tel" placeholder="Phone Number">
+            <label for="startingAmount">Starting Amount:</label>
+            <input id = "startingAmount"name ="startingAmount" type ="number" placeholder="Starting Amount">
+
             <h3> Instrument Group</h3>
                 <select name="subgroup">
-                <option value="Flute/Piccolo" selected>Flutes/Piccolos</option>
-                <option value="Clarinet/BassClarinet">Clarinets/BassClarinets</option>
-                <option value="DblReeds">DblReeds</option>
-                <option value="Saxes">Saxes</option>
-                <option value="Trumpet">Trumpets</option>
-                <option value="Horns">Horns</option>
-                <option value="Trombone">Trombones</option>
-                <option value="Euphoniums/Tubas">Euphoniums/Tubas</option>
-                <option value="Percussion">Percussion</option>
-                <option value="Colorguard">Colorguard</option>
+                    <option value="Flute/Piccolo" selected>Flutes/Piccolos</option>
+                    <option value="Clarinet/BassClarinet">Clarinets/BassClarinets</option>
+                    <option value="DblReeds">DblReeds</option>
+                    <option value="Saxes">Saxes</option>
+                    <option value="Trumpet">Trumpets</option>
+                    <option value="Horns">Horns</option>
+                    <option value="Trombone">Trombones</option>
+                    <option value="Euphoniums/Tubas">Euphoniums/Tubas</option>
+                    <option value="Percussion">Percussion</option>
+                    <option value="Colorguard">Colorguard</option>
                 </select>
                 <input id ="addStudentBtn" type ="submit" value="Add student"/>
         </form>
@@ -45,10 +48,26 @@
                     <label for="last-name">Find member's stats by last name:</label>
                     <input id="last-name"type ="text"name ="last-name"placeholder="Last Name">
                 </div>
-                <div id="other-filters">
-                    <button id="instrumentTotalsBtn">Get Donation Totals by Instrument</button>
-                    <button id="donationsRanker">Show All Donations (highest first)</button>
+                <div id="instrumentTotalTool">
+                    <label for="instrument">Get donation total by instrument:</label>
+                    <select name="subgroup">
+                        <option value="Flute/Piccolo" selected>Flutes/Piccolos</option>
+                        <option value="Clarinet/BassClarinet">Clarinets/BassClarinets</option>
+                        <option value="DblReeds">DblReeds</option>
+                        <option value="Saxes">Saxes</option>
+                        <option value="Trumpet">Trumpets</option>
+                        <option value="Horns">Horns</option>
+                        <option value="Trombone">Trombones</option>
+                        <option value="Euphoniums/Tubas">Euphoniums/Tubas</option>
+                        <option value="Percussion">Percussion</option>
+                        <option value="Colorguard">Colorguard</option>
+                    </select>
+                        <input id ="instrument-total-btn" type ="submit" value="Get total"/>
                 </div>  
+                <div id="donationRanker">
+                    <button id="donationsRanker">Show All Donations (highest first)</button>
+                </div>
+              
         </section>
     </main>
     <button id="refreshBtn">Refresh Page</button>

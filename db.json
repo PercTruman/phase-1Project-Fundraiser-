@@ -70,7 +70,7 @@
       "email": "Sherwood@rosamond.me",
       "phonenumber": "555-1212",
       "instrument": "trumpet",
-      "donations": 43.50
+      "donations": 4
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "email": "Chaim_McDermott@dana.io",
       "phonenumber": "555-1212",
       "instrument": "colorguard",
-      "donations": 43.50
+      "donations": 93.50
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "email": "Rey.Padberg@karina.biz",
       "phonenumber": "555-1212",
       "instrument": "trombone",
-      "donations": 43.50
+      "donations": 100
     },
     {
       "firstname": "Shawn",
@@ -96,7 +96,7 @@
       "email": "drshawnhart@gmail.com",
       "phonenumber": "555-1212",
       "instrument": "Percussion",
-      "donations": 43.50,
+      "donations": 7.75,
       "id": 12
     },
     {
@@ -105,7 +105,7 @@
       "email": "aHart!@gmail.com",
       "phonenumber": "5",
       "instrument": "Horns",
-      "donations": 43.50,
+      "donations": 66,
       "id": 14
     },
     {
@@ -114,7 +114,7 @@
       "email": "shilloy.hart@gmail.com",
       "phonenumber": "555-1212",
       "instrument": "Colorguard",
-      "donations": 43.50,
+      "donations": 312,
       "id": 15
     }
   ]
