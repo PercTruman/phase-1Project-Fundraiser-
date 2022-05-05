@@ -17,10 +17,10 @@ newMemberForm.addEventListener('submit',
         let subcategoryField=e.target[4].value
         
         let memberObject={
-            first name: firstNameField,
-            last name: lastNameField,
+            firstname: firstNameField,
+            lastname: lastNameField,
             email: emailField,
-            phone number: phoneField,
+            phonenumber: phoneField,
             instrument: subcategoryField
         }
         postNewMember(memberObject)
@@ -36,6 +36,6 @@ function postNewMember(memberObject){
     },
         body:JSON.stringify(memberObject)
 })
-    .then(res=>console.log(res.json()))
-    // .then(member=)
+    .then(res=>res.json())
+    .then(member=> alert(member.firstname +` has been successfully added.`))
 }
