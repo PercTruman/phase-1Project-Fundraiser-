@@ -6,7 +6,7 @@
       "lastname": "Graham",
       "email": "Sincere@april.biz",
       "phonenumber": "555-1212",
-      "instrument": "Trombones",
+      "instrument": "trombones",
       "donations": 43.5
     },
     {
@@ -15,7 +15,7 @@
       "lastname": "Howell",
       "email": "Shanna@melissa.tv",
       "phonenumber": "555-1212",
-      "instrument": "Percussion",
+      "instrument": "percussion",
       "donations": 43.5
     },
     {
@@ -24,7 +24,7 @@
       "lastname": "Bauch",
       "email": "Nathan@yesenia.net",
       "phonenumber": "555-1212",
-      "instrument": "Clarinets/BassClarinets",
+      "instrument": "bassclarinets",
       "donations": 43.5
     },
     {
@@ -33,7 +33,7 @@
       "lastname": "Lebsack",
       "email": "Julianne.OConner@kory.org",
       "phonenumber": "555-1212",
-      "instrument": "Flutes/Piccolos",
+      "instrument": "flutes",
       "donations": 43.5
     },
     {
@@ -42,7 +42,7 @@
       "lastname": "Dietrich",
       "email": "Lucio_Hettinger@annie.ca",
       "phonenumber": "555-1212",
-      "instrument": "Clarinets/BassClarinets",
+      "instrument": "clarinets",
       "donations": 43.5
     },
     {
@@ -51,7 +51,7 @@
       "lastname": "Schulist",
       "email": "Karley_Dach@jasper.info",
       "phonenumber": "555-1212",
-      "instrument": "Horns",
+      "instrument": "horns",
       "donations": 43.5
     },
     {
@@ -60,7 +60,7 @@
       "lastname": "Weissnat",
       "email": "Telly.Hoeger@billy.biz",
       "phonenumber": "555-1212",
-      "instrument": "Percussion",
+      "instrument": "percussion",
       "donations": 43.5
     },
     {
@@ -69,7 +69,7 @@
       "lastname": "Runolfsdottir",
       "email": "Sherwood@rosamond.me",
       "phonenumber": "555-1212",
-      "instrument": "Trumpets",
+      "instrument": "trumpets",
       "donations": 4
     },
     {
@@ -78,7 +78,7 @@
       "lastname": "Reichert",
       "email": "Chaim_McDermott@dana.io",
       "phonenumber": "555-1212",
-      "instrument": "Colorguard",
+      "instrument": "colorguard",
       "donations": 93.5
     },
     {
@@ -87,7 +87,7 @@
       "lastname": "DuBuque",
       "email": "Rey.Padberg@karina.biz",
       "phonenumber": "555-1212",
-      "instrument": "Trombones",
+      "instrument": "trombones",
       "donations": 100
     },
     {
@@ -96,7 +96,7 @@
       "email": "jd@yahoo.com",
       "phonenumber": "555-1212",
       "donations": "6.24",
-      "instrument": "Saxes",
+      "instrument": "saxes",
       "id": 11
     }
   ]

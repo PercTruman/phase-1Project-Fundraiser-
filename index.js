@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 let memberArray =[]
-let totalDonationsByInstrumentArray=[]
 let showDonations = false
 
 const newMemberForm=document.getElementById('new-member-form')
@@ -15,21 +14,21 @@ const instrumentTotals=document.getElementById('subgroup')
 const donationsRankerBtn=document.getElementById('donationsRankerBtn')
 const reloadBtn=document.getElementById('refreshBtn').addEventListener('click', ()=>location.reload())
 
-const totalDonationsByInstrument = {
-    piccolos:0,
-    flutes:0,
-    clarinets:0,
-    bassclarinets:0,
-    dblReeds:0,
-    saxes:0,
-    trumpets:0,
-    horns:0,
-    trombones:0,
-    euphoniums:0,
-    tubas:0,
-    percussion:0,
-    colorguard:0
-}
+const totalDonationsByInstrumentArray = [
+    {instrument:piccolos, total:0},
+    {instrument:flutes,total:0},
+    {instrument:clarinets,total:0},
+    {instrument:bassclarinets,total:0},
+    {instrument:dblReeds,total:0},
+    {instrument:saxes,total:0},
+    {instrument:trumpets,total:0},
+    {instrument:horns,total:0},
+    {instrument:trombones,total:0},
+    {instrument:euphoniums,total:0},
+    {instrument:tubas,total:0},
+    {instrument:percussion,total:0},
+    {instrument:colorguard,total:0}
+]
 
 
 
@@ -123,15 +122,13 @@ function searchStudents(input){
       
 instrumentTotals.addEventListener('change', (e)=>{
     let selectedInstrument = e.target.value
-           sumTotalByInstrument(selectedInstrument.toLowerCase())
+           sumTotalByInstrument(selectedInstrument)
 })
 
 
 function sumTotalByInstrument(selectedInstrument){
-    // console.log(selectedInstrument)
-    console.log(totalDonationsByInstrument)
-    let currentTotal = totalDonationsByInstrument
-    // console.log(currentTotal)
+    let currentTotal = totalDonationsByInstrumentArray.filter(object=>object.instrument===selectedInstrument)
+    console.log(totalDonationsByInstrumentArray)
      memberArray.forEach(member=>{
         if (member.instrument==selectedInstrument){
             console.log('hi')
