@@ -2,9 +2,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     fetch('http://localhost:3000/users')
         .then(res=>res.json())
         .then(members=>members.forEach(member=>memberArray.push(member)))
+
+    fetch('http://localhost:3000/donationsByInstrument')
+        .then(res=>res.json())
+        .then(totals=>totals.forEach(total=totalDonationsByInstrumentArray.push(total.value)) )
 })
 
 let memberArray =[]
+let totalDonationsByInstrumentArray=[]
 let showDonations = false
 
 const newMemberForm=document.getElementById('new-member-form')
@@ -12,6 +17,19 @@ const studentStatsInput=document.getElementById('student-stats-input')
 const instrumentTotals=document.getElementById('subgroup')
 const donationsRankerBtn=document.getElementById('donationsRankerBtn')
 const reloadBtn=document.getElementById('refreshBtn').addEventListener('click', ()=>location.reload())
+
+const totalDonationsByInstrument = {
+    flutesPiccolos:0,
+    clarinetsBassClarinets:0,
+    dblReeds:0,
+    saxes:0,
+    trumpets:0,
+    horns:0,
+    trombones:0,
+    euphoniumsTubas:0,
+    percussion:0,
+    colorguard:0
+}
 
 
 newMemberForm.addEventListener('submit',
