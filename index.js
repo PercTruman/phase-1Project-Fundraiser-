@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 let memberArray =[]
+let showDonations = false
 
 const newMemberForm=document.getElementById('new-member-form')
 const studentStatsInput=document.getElementById('student-stats-input')
@@ -125,14 +126,20 @@ function sumTotalByInstrument(input){
 
         instrumentDonations.innerText=runningTotal
         instrumentDonationElement.append('$ ',instrumentDonations.innerText)
-  }
+    } 
 
-  donationsRankerBtn.addEventListener('click', ()=>{
-      memberArray.sort((a,b)=> b.donations - a.donations)
-      memberArray.forEach(member=>{
-         let memberHeader= document.createElement('h5')
-         memberHeader.innerText=`${member.firstname} ${member.lastname}  $${member.donations.toFixed(2)}`
-         donationRanker.append(memberHeader)
-      })
-  })
-  
+        donationsRankerBtn.addEventListener('click', ()=>{
+            showDonations = !showDonations
+            if(showDonations){
+                donationsRankerBtn.innerText = "Hide List"
+                memberArray.sort((a,b)=> b.donations - a.donations)
+                memberArray.forEach(member=>{
+                    let memberHeader= document.createElement('h5')
+                    memberHeader.innerText=`${member.firstname} ${member.lastname}  $${member.donations.toFixed(2)}`
+                    donationRanker.append(memberHeader)
+                })
+            } else{
+                memberHeader.style.display = "none"
+               
+            }
+        })
