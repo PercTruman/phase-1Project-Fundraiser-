@@ -15,19 +15,19 @@ const donationsRankerBtn=document.getElementById('donationsRankerBtn')
 const reloadBtn=document.getElementById('refreshBtn').addEventListener('click', ()=>location.reload())
 
 const totalDonationsByInstrumentArray = [
-    {instrument:piccolos, total:0},
-    {instrument:flutes,total:0},
-    {instrument:clarinets,total:0},
-    {instrument:bassclarinets,total:0},
-    {instrument:dblReeds,total:0},
-    {instrument:saxes,total:0},
-    {instrument:trumpets,total:0},
-    {instrument:horns,total:0},
-    {instrument:trombones,total:0},
-    {instrument:euphoniums,total:0},
-    {instrument:tubas,total:0},
-    {instrument:percussion,total:0},
-    {instrument:colorguard,total:0}
+    {instrument:'piccolos', total:0},
+    {instrument:'flutes',total:0},
+    {instrument:'clarinets',total:0},
+    {instrument:'bassclarinets',total:0},
+    {instrument:'dblReeds',total:0},
+    {instrument:'saxes',total:0},
+    {instrument:'trumpets',total:0},
+    {instrument:'horns',total:0},
+    {instrument:'trombones',total:0},
+    {instrument:'euphoniums',total:0},
+    {instrument:'tubas',total:0},
+    {instrument:'percussion',total:0},
+    {instrument:'colorguard',total:0}
 ]
 
 
@@ -127,27 +127,26 @@ instrumentTotals.addEventListener('change', (e)=>{
 
 
 function sumTotalByInstrument(selectedInstrument){
-    let currentTotal = totalDonationsByInstrumentArray.filter(object=>object.instrument===selectedInstrument)
-    console.log(totalDonationsByInstrumentArray)
-     memberArray.forEach(member=>{
-        if (member.instrument==selectedInstrument){
-            console.log('hi')
-            currentTotal+=parseInt(member.donations)
-           return currentTotal
-        }
-      
-    })
-    displayInstrumentTotal(currentTotal)
-}
+    let singleInstrumentArray = memberArray.filter(member=>member.instrument===selectedInstrument)
+     let totalTarget =totalDonationsByInstrumentArray.find(instrumentObject=>instrumentObject.instrument==selectedInstrument)
+     console.log(totalTarget)
+     singleInstrumentArray.forEach(player=>{
+          totalTarget.total +=player.donations
+        })
+        displayInstrumentTotal(totalTarget)
+    }
+ 
 
-  function displayInstrumentTotal(runningTotal){
+
+  function displayInstrumentTotal(totalTarget){
+      console.log(totalTarget)
         donationsRankerBtn.style.display = "none"
 
         let instrumentDonationElement= document.getElementById('instrumentTotalTool')
         let instrumentDonations =document.createElement('h2')
 
-        instrumentDonations.innerText=runningTotal
-        instrumentDonationElement.append('$ ',instrumentDonations.innerText)
+        instrumentDonations.innerText=totalTarget
+        instrumentDonationElement.append('$ ',totalTarget.total)
     } 
 
         donationsRankerBtn.addEventListener('click', ()=>{
