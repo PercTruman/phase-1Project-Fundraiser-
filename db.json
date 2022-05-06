@@ -6,8 +6,8 @@
       "lastname": "Graham",
       "email": "Sincere@april.biz",
       "phonenumber": "555-1212",
-      "instrument": "trombone",
-      "donations": 43.50
+      "instrument": "Trombones",
+      "donations": 43.5
     },
     {
       "id": 2,
@@ -15,8 +15,8 @@
       "lastname": "Howell",
       "email": "Shanna@melissa.tv",
       "phonenumber": "555-1212",
-      "instrument": "percussion",
-      "donations": 43.50
+      "instrument": "Percussion",
+      "donations": 43.5
     },
     {
       "id": 3,
@@ -24,8 +24,8 @@
       "lastname": "Bauch",
       "email": "Nathan@yesenia.net",
       "phonenumber": "555-1212",
-      "instrument": "clarinet",
-      "donations": 43.50
+      "instrument": "Clarinets/BassClarinets",
+      "donations": 43.5
     },
     {
       "id": 4,
@@ -33,8 +33,8 @@
       "lastname": "Lebsack",
       "email": "Julianne.OConner@kory.org",
       "phonenumber": "555-1212",
-      "instrument": "flute",
-      "donations": 43.50
+      "instrument": "Flutes",
+      "donations": 43.5
     },
     {
       "id": 5,
@@ -42,8 +42,8 @@
       "lastname": "Dietrich",
       "email": "Lucio_Hettinger@annie.ca",
       "phonenumber": "555-1212",
-      "instrument": "clarinet",
-      "donations": 43.50
+      "instrument": "Clarinets/BassClarinets",
+      "donations": 43.5
     },
     {
       "id": 6,
@@ -51,8 +51,8 @@
       "lastname": "Schulist",
       "email": "Karley_Dach@jasper.info",
       "phonenumber": "555-1212",
-      "instrument": "french horn",
-      "donations": 43.50
+      "instrument": "Horns",
+      "donations": 43.5
     },
     {
       "id": 7,
@@ -60,8 +60,8 @@
       "lastname": "Weissnat",
       "email": "Telly.Hoeger@billy.biz",
       "phonenumber": "555-1212",
-      "instrument": "percussion",
-      "donations": 43.50
+      "instrument": "Percussion",
+      "donations": 43.5
     },
     {
       "id": 8,
@@ -69,7 +69,7 @@
       "lastname": "Runolfsdottir",
       "email": "Sherwood@rosamond.me",
       "phonenumber": "555-1212",
-      "instrument": "trumpet",
+      "instrument": "Trumpets",
       "donations": 4
     },
     {
@@ -78,8 +78,8 @@
       "lastname": "Reichert",
       "email": "Chaim_McDermott@dana.io",
       "phonenumber": "555-1212",
-      "instrument": "colorguard",
-      "donations": 93.50
+      "instrument": "Colorguard",
+      "donations": 93.5
     },
     {
       "id": 10,
@@ -87,35 +87,17 @@
       "lastname": "DuBuque",
       "email": "Rey.Padberg@karina.biz",
       "phonenumber": "555-1212",
-      "instrument": "trombone",
+      "instrument": "Trombones",
       "donations": 100
     },
     {
-      "firstname": "Shawn",
-      "lastname": "Hart",
-      "email": "drshawnhart@gmail.com",
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "jd@yahoo.com",
       "phonenumber": "555-1212",
-      "instrument": "Percussion",
-      "donations": 7.75,
-      "id": 12
-    },
-    {
-      "firstname": "Autumn",
-      "lastname": "Hart",
-      "email": "aHart!@gmail.com",
-      "phonenumber": "5",
-      "instrument": "Horns",
-      "donations": 66,
-      "id": 14
-    },
-    {
-      "firstname": "Shilloy",
-      "lastname": "Hart",
-      "email": "shilloy.hart@gmail.com",
-      "phonenumber": "555-1212",
-      "instrument": "Colorguard",
-      "donations": 312,
-      "id": 15
+      "donations": "6.24",
+      "instrument": "Saxes",
+      "id": 11
     }
   ]
 }

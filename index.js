@@ -92,7 +92,7 @@ function searchStudents(input){
             phoneText.innerText=phone
 
         let donationText=document.createElement('h3')
-            donationText.innerText=donations.toFixed(2)
+            donationText.innerText=donations
       
         studentStatsInput.append(statDisplayDiv)
             statDisplayDiv.innerHTML = `
@@ -103,15 +103,17 @@ function searchStudents(input){
   }
       
 instrumentTotals.addEventListener('change', (e)=>{
-    let input = e.target.value
-           sumTotalByInstrument(input)
+    let selectedInstrument = e.target.value
+           sumTotalByInstrument(selectedInstrument)
 })
+let runningTotal = 0
 
-function sumTotalByInstrument(input){
-    let runningTotal = 0
-    memberArray.forEach(member=>{
-        if (member.instrument==input){
-            runningTotal+=member.donations
+function sumTotalByInstrument(selectedInstrument){
+     memberArray.forEach(member=>{
+        if (member.instrument==selectedInstrument){
+            console.log('hi')
+            runningTotal+=parseInt(member.donations)
+            console.log(runningTotal)
         }
       
     })
@@ -135,7 +137,7 @@ function sumTotalByInstrument(input){
                 memberArray.sort((a,b)=> b.donations - a.donations)
                 memberArray.forEach(member=>{
                     let memberHeader= document.createElement('h5')
-                    memberHeader.innerText=`${member.firstname} ${member.lastname}  $${member.donations.toFixed(2)}`
+                    memberHeader.innerText=`${member.firstname} ${member.lastname}  $${member.donations}`
                     donationRanker.append(memberHeader)
                 })
             } else{
