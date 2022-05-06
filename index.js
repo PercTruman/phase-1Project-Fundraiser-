@@ -3,9 +3,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         .then(res=>res.json())
         .then(members=>members.forEach(member=>memberArray.push(member)))
 
-    fetch('http://localhost:3000/donationsByInstrument')
-        .then(res=>res.json())
-        .then(totals=>totals.forEach(total=totalDonationsByInstrumentArray.push(total.value)) )
 })
 
 let memberArray =[]
@@ -19,17 +16,21 @@ const donationsRankerBtn=document.getElementById('donationsRankerBtn')
 const reloadBtn=document.getElementById('refreshBtn').addEventListener('click', ()=>location.reload())
 
 const totalDonationsByInstrument = {
-    flutesPiccolos:0,
-    clarinetsBassClarinets:0,
+    piccolos:0,
+    flutes:0,
+    clarinets:0,
+    bassclarinets:0,
     dblReeds:0,
     saxes:0,
     trumpets:0,
     horns:0,
     trombones:0,
-    euphoniumsTubas:0,
+    euphoniums:0,
+    tubas:0,
     percussion:0,
     colorguard:0
 }
+
 
 
 newMemberForm.addEventListener('submit',
@@ -122,20 +123,24 @@ function searchStudents(input){
       
 instrumentTotals.addEventListener('change', (e)=>{
     let selectedInstrument = e.target.value
-           sumTotalByInstrument(selectedInstrument)
+           sumTotalByInstrument(selectedInstrument.toLowerCase())
 })
-let runningTotal = 0
+
 
 function sumTotalByInstrument(selectedInstrument){
+    // console.log(selectedInstrument)
+    console.log(totalDonationsByInstrument)
+    let currentTotal = totalDonationsByInstrument
+    // console.log(currentTotal)
      memberArray.forEach(member=>{
         if (member.instrument==selectedInstrument){
             console.log('hi')
-            runningTotal+=parseInt(member.donations)
-           return runningTotal
+            currentTotal+=parseInt(member.donations)
+           return currentTotal
         }
       
     })
-    displayInstrumentTotal(runningTotal)
+    displayInstrumentTotal(currentTotal)
 }
 
   function displayInstrumentTotal(runningTotal){
