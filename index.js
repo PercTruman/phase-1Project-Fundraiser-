@@ -71,7 +71,7 @@ function searchStudents(input){
       let donations=member.donations
 
 
-        donationsRanker.style.display = "none"
+        donationsRankerBtn.style.display = "none"
         instrumentTotals.style.display ="none"
 
         let statDisplayDiv = document.createElement('div')
@@ -92,14 +92,14 @@ function searchStudents(input){
             phoneText.innerText=phone
 
         let donationText=document.createElement('h3')
-            donationText.innerText=donations
+            donationText.innerText=donations.toFixed(2)
       
         studentStatsInput.append(statDisplayDiv)
             statDisplayDiv.innerHTML = `
-            ${nameDisplay}<br>
-            ${emailText.innerText}<br>
-            ${phoneText.innerText}<br>
-            ${donationText.innerText}`
+            Name: ${nameDisplay}<br>
+            Email: ${emailText.innerText}<br>
+            Phone: ${phoneText.innerText}<br>
+            Total Donations: ${donationText.innerText}`
   }
       
 instrumentTotals.addEventListener('change', (e)=>{
@@ -139,7 +139,7 @@ function sumTotalByInstrument(input){
                     donationRanker.append(memberHeader)
                 })
             } else{
-                memberHeader.style.display = "none"
-               
+                donationsRankerBtn.innerText = "Show Donations(highest first)"
+                location.reload()
             }
         })
