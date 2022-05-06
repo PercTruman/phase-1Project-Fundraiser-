@@ -113,7 +113,7 @@ function sumTotalByInstrument(selectedInstrument){
         if (member.instrument==selectedInstrument){
             console.log('hi')
             runningTotal+=parseInt(member.donations)
-            console.log(runningTotal)
+           return runningTotal
         }
       
     })
