@@ -9,7 +9,7 @@ let memberArray =[]
 const newMemberForm=document.getElementById('new-member-form')
 const studentStatsInput=document.getElementById('student-stats-input')
 const instrumentTotals=document.getElementById('subgroup')
-const donationsRanker=document.getElementById('donationsRanker')
+const donationsRankerBtn=document.getElementById('donationsRankerBtn')
 const reloadBtn=document.getElementById('refreshBtn').addEventListener('click', ()=>location.reload())
 
 
@@ -127,13 +127,12 @@ function sumTotalByInstrument(input){
         instrumentDonationElement.append('$ ',instrumentDonations.innerText)
   }
 
-  donationsRanker.addEventListener('click', ()=>{
-     let rankedDiv= document.createElement('div')
+  donationsRankerBtn.addEventListener('click', ()=>{
       memberArray.sort((a,b)=> b.donations - a.donations)
       memberArray.forEach(member=>{
          let memberHeader= document.createElement('h5')
-         memberHeader.innerText=`${member.firstname} ${member.lastname} ${member.donations}`
-         donationsRanker.append(rankedDiv)
+         memberHeader.innerText=`${member.firstname} ${member.lastname}  $${member.donations.toFixed(2)}`
+         donationRanker.append(memberHeader)
       })
   })
   
