@@ -75,13 +75,8 @@ studentStatsInput.addEventListener('keypress', (e)=>{
 
 function searchStudents(input){
    let foundStudent= memberArray.find(member=>member.lastname.toLowerCase()===input)
-        foundStudent? displayFoundStudent(foundStudent):alert('Student not found.')
-        //    if(foundStudent) {
-        //        displayFoundStudent(foundStudent)
-        //     }else {
-        //     alert('Student not found. Please try again')
-        //     }
-}
+        foundStudent? displayFoundStudent(foundStudent) : alert('Student not found.')
+} 
 
   function displayFoundStudent(member){
       let first = member.firstname
@@ -130,8 +125,7 @@ instrumentTotals.addEventListener('change', (e)=>{
 
 function sumTotalByInstrument(selectedInstrument){
     let singleInstrumentArray = memberArray.filter(member=>member.instrument===selectedInstrument)
-     let totalTarget =totalDonationsByInstrumentArray.find(instrumentObject=>instrumentObject.instrument==selectedInstrument)
-     console.log(totalTarget)
+    let totalTarget =totalDonationsByInstrumentArray.find(instrumentObject=>instrumentObject.instrument==selectedInstrument)
      singleInstrumentArray.forEach(player=>{
           totalTarget.total +=player.donations
         })
@@ -141,14 +135,13 @@ function sumTotalByInstrument(selectedInstrument){
 
 
   function displayInstrumentTotal(totalTarget){
-      console.log(totalTarget)
         donationsRankerBtn.style.display = "none"
 
         let instrumentDonationElement= document.getElementById('instrumentTotalTool')
         let instrumentDonations =document.createElement('h2')
 
         instrumentDonations.innerText=totalTarget
-        instrumentDonationElement.append('$ ',totalTarget.total)
+        instrumentDonationElement.after('$ ',totalTarget.total.toFixed(2))
     } 
 
         donationsRankerBtn.addEventListener('click', ()=>{

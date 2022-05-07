@@ -89,6 +89,15 @@
       "phonenumber": "555-1212",
       "instrument": "trombones",
       "donations": 100
+    },
+    {
+      "firstname": "adsfd",
+      "lastname": "asdfd",
+      "email": "dfdf",
+      "phonenumber": "345435",
+      "donations": 67.09,
+      "instrument": "percussion",
+      "id": 11
     }
   ]
 }

@@ -12,7 +12,7 @@ header, footer {
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
     color: white;
     text-align: center;
-    height: 4rem;
+    height: 15%;
     padding: 2em;
     margin: 0 auto;
 }
@@ -75,3 +75,6 @@ form input {
     text-align: center;
 }
 
+instrumentTotalTool:after{
+    color: white;
+}
