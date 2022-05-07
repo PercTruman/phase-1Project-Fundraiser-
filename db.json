@@ -89,17 +89,6 @@
       "phonenumber": "555-1212",
       "instrument": "trombones",
       "donations": 100
-    },
-    {
-      "firstname": "John",
-      "lastname": "Doe",
-      "email": "jd@yahoo.com",
-      "phonenumber": "555-1212",
-      "donations": "6.24",
-      "instrument": "saxes",
-      "id": 11
     }
   ]
-  
 }
-

@@ -63,7 +63,7 @@ function postNewMember(memberObject){
         body:JSON.stringify(memberObject)
 })
     .then(res=>res.json())
-    .then(member=> alert(member.firstname +` has been successfully added.`))
+    .then(member=> alert(`${member.firstname}  has been successfully added.`))
 }
 
 studentStatsInput.addEventListener('keypress', (e)=>{
@@ -74,11 +74,13 @@ studentStatsInput.addEventListener('keypress', (e)=>{
     })
 
 function searchStudents(input){
-    memberArray.forEach(member=>{
-        if (member.lastname.toLowerCase() ===input){
-            displayFoundStudent(member)
-        }
-    })
+   let foundStudent= memberArray.find(member=>member.lastname.toLowerCase()===input)
+        foundStudent? displayFoundStudent(foundStudent):alert('Student not found.')
+        //    if(foundStudent) {
+        //        displayFoundStudent(foundStudent)
+        //     }else {
+        //     alert('Student not found. Please try again')
+        //     }
 }
 
   function displayFoundStudent(member){
