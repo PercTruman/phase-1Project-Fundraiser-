@@ -6,9 +6,8 @@
       "lastname": "Graham",
       "email": "Sincere@april.biz",
       "phonenumber": "555-1212",
-      "donations": 43.5,
+      "donations": 43.57,
       "instrument": "trombones"
-      
     },
     {
       "id": 2,
@@ -16,9 +15,8 @@
       "lastname": "Howell",
       "email": "Shanna@melissa.tv",
       "phonenumber": "555-1212",
-      "donations": 43.5,
+      "donations": 143.51,
       "instrument": "percussion"
-      
     },
     {
       "id": 3,
@@ -28,7 +26,6 @@
       "phonenumber": "555-1212",
       "donations": 43.5,
       "instrument": "bassclarinets"
-      
     },
     {
       "id": 4,
@@ -36,9 +33,8 @@
       "lastname": "Lebsack",
       "email": "Julianne.OConner@kory.org",
       "phonenumber": "555-1212",
-      "donations": 43.5,
+      "donations": 3.57,
       "instrument": "flutes"
-      
     },
     {
       "id": 5,
@@ -48,7 +44,6 @@
       "phonenumber": "555-1212",
       "donations": 43.5,
       "instrument": "clarinets"
-      
     },
     {
       "id": 6,
@@ -58,7 +53,6 @@
       "phonenumber": "555-1212",
       "donations": 43.5,
       "instrument": "horns"
-      
     },
     {
       "id": 7,
@@ -68,7 +62,6 @@
       "phonenumber": "555-1212",
       "donations": 43.5,
       "instrument": "percussion"
-     
     },
     {
       "id": 8,
@@ -78,7 +71,6 @@
       "phonenumber": "555-1212",
       "donations": 4,
       "instrument": "trumpets"
-      
     },
     {
       "id": 9,
@@ -88,7 +80,6 @@
       "phonenumber": "555-1212",
       "donations": 93.5,
       "instrument": "colorguard"
-     
     },
     {
       "id": 10,
@@ -98,14 +89,13 @@
       "phonenumber": "555-1212",
       "donations": 100,
       "instrument": "trombones"
-      
     },
     {
       "firstname": "Shawn",
       "lastname": "Hart",
       "email": "drshawnhart@gmail.com",
       "phonenumber": "555-1212",
-      "donations": ".49",
+      "donations": "11.13",
       "instrument": "percussion",
       "id": 11
     }

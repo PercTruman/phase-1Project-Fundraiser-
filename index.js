@@ -27,17 +27,18 @@ const totalDonationsByInstrumentArray = [
   { instrument: "trombones", total: 0 },
   { instrument: "euphoniums", total: 0 },
   { instrument: "tubas", total: 0 },
-  { instrument: "percussion", total: 0 },
+  { instrument: "percussion", total: 41 },
   { instrument: "colorguard", total: 0 },
 ];
 
 newMemberForm.addEventListener("submit", (e) => {
-  let firstNameField = e.target[0].value;
-  let lastNameField = e.target[1].value;
-  let emailField = e.target[2].value;
-  let phoneField = e.target[3].value;
-  let startingAmountField = e.target[4].value;
-  let subcategoryField = e.target[5].value;
+  e.preventDefault()
+  let firstNameField = e.target.first_name.value;
+  let lastNameField = e.target.last_name.value;
+  let emailField = e.target.email.value;
+  let phoneField = e.target.phone.value;
+  let startingAmountField = e.target.startingAmount.value;
+  let subcategoryField = e.target.subgroup.value;
 
   let memberObject = {
     firstname: firstNameField,
@@ -51,18 +52,15 @@ newMemberForm.addEventListener("submit", (e) => {
 });
 
 function postNewMember(memberObject) {
-  fetch("http://localhost:3000/users", {
-    method: "POST",
+  fetch('http://localhost:3000/users', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(memberObject),
+    body:JSON.stringify(memberObject)
   })
-    .then((res) => res.json())
-    .then((member) =>
-      alert(`${member.firstname}  has been successfully added.`)
-    );
+    .then(res =>res.json())
+    .then(member=>alert(`${member.firstname} has been successfully added to the ${member.instrument} section.`)) 
 }
 
 studentStatsInput.addEventListener("keypress", (e) => {
@@ -125,19 +123,23 @@ instrumentTotals.addEventListener("change", (e) => {
 });
 
 function sumTotalByInstrument(selectedInstrument) {
-  let singleInstrumentArray = memberArray.filter(
-    (member) => member.instrument === selectedInstrument
+  let singleInstrumentArray = memberArray.filter(   
+    member => member.instrument === selectedInstrument
   );
-  let totalTarget = totalDonationsByInstrumentArray.find(
-    (instrumentObject) => instrumentObject.instrument == selectedInstrument
-  );
-  singleInstrumentArray.forEach((player) => {
-    totalTarget.total += player.donations;
-  });
-  displayInstrumentTotal(totalTarget);
-}
+  let donationsArray =[]
+  singleInstrumentArray.forEach(obj=>donationsArray.push(parseFloat(obj.donations)))
+  console.log(donationsArray)
+  const initialValue = 0
 
-function displayInstrumentTotal(totalTarget) {
+  const instrumentTotal = donationsArray.reduce(
+      (prevValue, curValue)=>prevValue + curValue, initialValue)
+      console.log(instrumentTotal)
+      displayInstrumentTotal(instrumentTotal);
+  };
+ 
+
+function displayInstrumentTotal(instrumentTotal) {
+    console.log(instrumentTotal)
   donationsRankerBtn.style.display = "none";
 
   let instrumentDonationElement = document.getElementById(
@@ -145,8 +147,8 @@ function displayInstrumentTotal(totalTarget) {
   );
   let instrumentDonations = document.createElement("h2");
 
-  instrumentDonations.innerText = totalTarget;
-  instrumentDonationElement.after("$ ", totalTarget.total.toFixed(2));
+  instrumentDonations.innerText = instrumentTotal;
+  instrumentDonationElement.after("$ ", instrumentTotal.toFixed(2));
 }
 
 donationsRankerBtn.addEventListener("click", () => {
