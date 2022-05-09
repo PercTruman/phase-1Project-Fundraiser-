@@ -123,7 +123,6 @@ function displayFoundStudent(member) {
 let instrumentDonationElement = document.getElementById("instrumentTotalTool");
 let instrumentDonations = document.createElement("h2");
 instrumentTotals.addEventListener("change", (e) => {
-    console.log('hi ho')
   let selectedInstrument = e.target.value;
   sumTotalByInstrument(selectedInstrument);
 });
