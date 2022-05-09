@@ -32,7 +32,7 @@ const totalDonationsByInstrumentArray = [
 ];
 
 newMemberForm.addEventListener("submit", (e) => {
-  e.preventDefault()
+  e.preventDefault();
   let firstNameField = e.target.first_name.value;
   let lastNameField = e.target.last_name.value;
   let emailField = e.target.email.value;
@@ -52,15 +52,19 @@ newMemberForm.addEventListener("submit", (e) => {
 });
 
 function postNewMember(memberObject) {
-  fetch('http://localhost:3000/users', {
-    method: 'POST',
+  fetch("http://localhost:3000/users", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
-    body:JSON.stringify(memberObject)
+    body: JSON.stringify(memberObject),
   })
-    .then(res =>res.json())
-    .then(member=>alert(`${member.firstname} has been successfully added to the ${member.instrument} section.`)) 
+    .then((res) => res.json())
+    .then((member) =>
+      alert(
+        `${member.firstname} has been successfully added to the ${member.instrument} section.`
+      )
+    );
 }
 
 studentStatsInput.addEventListener("keypress", (e) => {
@@ -116,36 +120,34 @@ function displayFoundStudent(member) {
             Phone: ${phoneText.innerText}<br>
             Total Donations: ${donationText.innerText}`;
 }
-
+let instrumentDonationElement = document.getElementById("instrumentTotalTool");
+let instrumentDonations = document.createElement("h2");
 instrumentTotals.addEventListener("change", (e) => {
+    console.log('hi ho')
   let selectedInstrument = e.target.value;
   sumTotalByInstrument(selectedInstrument);
 });
 
+
 function sumTotalByInstrument(selectedInstrument) {
-  let singleInstrumentArray = memberArray.filter(   
-    member => member.instrument === selectedInstrument
+  let singleInstrumentArray = memberArray.filter(
+    (member) => member.instrument === selectedInstrument
   );
-  let donationsArray =[]
-  singleInstrumentArray.forEach(obj=>donationsArray.push(parseFloat(obj.donations)))
-  console.log(donationsArray)
-  const initialValue = 0
+  let donationsArray = [];
+  singleInstrumentArray.forEach((obj) =>
+    donationsArray.push(parseFloat(obj.donations))
+  );
+  const initialValue = 0;
 
   const instrumentTotal = donationsArray.reduce(
-      (prevValue, curValue)=>prevValue + curValue, initialValue)
-      console.log(instrumentTotal)
-      displayInstrumentTotal(instrumentTotal);
-  };
- 
+    (prevValue, curValue) => prevValue + curValue,
+    initialValue
+  );
+  displayInstrumentTotal(instrumentTotal);
+}
 
 function displayInstrumentTotal(instrumentTotal) {
-    console.log(instrumentTotal)
   donationsRankerBtn.style.display = "none";
-
-  let instrumentDonationElement = document.getElementById(
-    "instrumentTotalTool"
-  );
-  let instrumentDonations = document.createElement("h2");
 
   instrumentDonations.innerText = instrumentTotal;
   instrumentDonationElement.after("$ ", instrumentTotal.toFixed(2));
