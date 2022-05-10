@@ -94,10 +94,19 @@
       "firstname": "Shawn",
       "lastname": "Hart",
       "email": "drshawnhart@gmail.com",
-      "phonenumber": "555-1212",
-      "donations": ".43",
-      "instrument": "percussion",
+      "phonenumber": "3498749587",
+      "donations": "65.09",
+      "instrument": "trombone",
       "id": 11
+    },
+    {
+      "firstname": "allisyn",
+      "lastname": "Hart",
+      "email": "shawnhart",
+      "phonenumber": "3498749587",
+      "donations": "45.00",
+      "instrument": "clarinets",
+      "id": 12
     }
   ]
 }
