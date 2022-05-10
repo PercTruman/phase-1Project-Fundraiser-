@@ -18,4 +18,10 @@ The ability for a director to input donations manually into this page will becom
 
 Easy Money has the functionality to notify prospective donors via text message or email (or both!) that the time for donation is coming. The sponsor/coach can set the parameters for how frequently-and how far in advance-these notifications will be sent. A message can be included in the donation request, as to who the organization is making the request, and why they are in need of assistance.
 
-Easy money will also have the functionality to facilitate electronic transactions.  All money donated through whatever means will stored in the database.
+Easy money will also have the functionality to facilitate electronic transactions.  All money donated through whatever means will be stored in the database.
+
+Here is a video walkthrough of the project:
+https://youtu.be/FHmI3VqHJ1w
+
+Gif of functionality:
+![](Phase1Gif.gif)
