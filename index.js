@@ -109,7 +109,7 @@ function displayFoundStudent(member) {
   donationText.innerText = donations;
 
   let closeLink= document.createElement('button');
-  closeLink.id ="closeLink"
+  closeLink.className ="closeLink"
   closeLink.innerText= "Close Window"
 
  studentStatsInput.appendChild(statDisplayDiv);
@@ -121,13 +121,14 @@ statDisplayDiv.innerHTML = `
              `;
 
 statDisplayDiv.append(closeLink)
-closeLink.addEventListener("click",()=>statDisplayDiv.innerHTML='');
+closeLink.addEventListener("click",()=>statDisplayDiv.style.display="none");
 }
 
 
 let instrumentDonationElement = document.getElementById("instrumentTotalTool");
 let instrumentDonations = document.createElement("h2");
 instrumentTotals.addEventListener("change", (e) => {
+  instrumentDonations.style.display="none"
   let selectedInstrument = e.target.value;
   sumTotalByInstrument(selectedInstrument);
 });
@@ -150,11 +151,21 @@ function sumTotalByInstrument(selectedInstrument) {
 }
 
 function displayInstrumentTotal(instrumentTotal) {
-  // donationsRankerBtn.style.display = "none";
+  let instrumentTotalDiv=document.createElement('div')
+  instrumentTotalDiv.className="statDisplayDiv";
+  let moneyDisplay=document.createElement('h2');
+  moneyDisplay.innerText = `$ ${instrumentTotal.toFixed(2)}`;
+  // instrumentDonationElement.after("$ ", instrumentTotal.toFixed(2));
+  let instrumentCloseLink= document.createElement('button');
+  instrumentCloseLink.className ="closeLink"
+  instrumentCloseLink.innerText= "Close Summary"
+  instrumentDonationElement.append(instrumentTotalDiv)
+  instrumentTotalDiv.append(moneyDisplay, instrumentCloseLink)
 
-  instrumentDonations.innerText = instrumentTotal;
-  instrumentDonationElement.after("$ ", instrumentTotal.toFixed(2));
+
+  instrumentCloseLink.addEventListener('click',()=>instrumentTotalDiv.style.display="none");
 }
+
 
 donationsRankerBtn.addEventListener("click", () => {
   showDonations = !showDonations;

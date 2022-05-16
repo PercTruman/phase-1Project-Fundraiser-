@@ -71,13 +71,14 @@ form input {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 instrumentTotalTool:after{
     color: white;
 }
 
-#closeLink {
+.closeLink {
     cursor:pointer;
     width: 100px;
     height: 45px;
@@ -85,3 +86,4 @@ instrumentTotalTool:after{
     padding: 5px;
     align-self: center;
 }
+
