@@ -11,9 +11,7 @@ const newMemberForm = document.getElementById("new-member-form");
 const studentStatsInput = document.getElementById("student-stats-input");
 const instrumentTotals = document.getElementById("subgroup");
 const donationsRankerBtn = document.getElementById("donationsRankerBtn");
-const reloadBtn = document
-  .getElementById("refreshBtn")
-  .addEventListener("click", () => location.reload());
+
 
 const totalDonationsByInstrumentArray = [
   { instrument: "piccolos", total: 0 },
@@ -90,11 +88,8 @@ function displayFoundStudent(member) {
   let phone = member.phonenumber;
   let donations = member.donations;
 
-  donationsRankerBtn.style.display = "none";
-  instrumentTotals.style.display = "none";
-
   let statDisplayDiv = document.createElement("div");
-  statDisplayDiv.id = "statDisplayDiv";
+  statDisplayDiv.className = "statDisplayDiv";
 
   let firstnameText = document.createElement("h4");
   firstnameText.innerText = first;
@@ -113,20 +108,29 @@ function displayFoundStudent(member) {
   let donationText = document.createElement("h3");
   donationText.innerText = donations;
 
-  studentStatsInput.append(statDisplayDiv);
-  statDisplayDiv.innerHTML = `
-            Name: ${nameDisplay}<br>
-            Email: ${emailText.innerText}<br>
-            Phone: ${phoneText.innerText}<br>
-            Total Donations: ${donationText.innerText}`;
+  let closeLink= document.createElement('button');
+  closeLink.id ="closeLink"
+  closeLink.innerText= "Close Window"
+
+ studentStatsInput.appendChild(statDisplayDiv);
+statDisplayDiv.innerHTML = `
+             Name: ${nameDisplay}<br>
+             Email: ${emailText.innerText}<br>
+             Phone: ${phoneText.innerText}<br>
+             Total Donations: ${donationText.innerText}
+             `;
+
+statDisplayDiv.append(closeLink)
+closeLink.addEventListener("click",()=>statDisplayDiv.innerHTML='');
 }
+
+
 let instrumentDonationElement = document.getElementById("instrumentTotalTool");
 let instrumentDonations = document.createElement("h2");
 instrumentTotals.addEventListener("change", (e) => {
   let selectedInstrument = e.target.value;
   sumTotalByInstrument(selectedInstrument);
 });
-
 
 function sumTotalByInstrument(selectedInstrument) {
   let singleInstrumentArray = memberArray.filter(
@@ -146,7 +150,7 @@ function sumTotalByInstrument(selectedInstrument) {
 }
 
 function displayInstrumentTotal(instrumentTotal) {
-  donationsRankerBtn.style.display = "none";
+  // donationsRankerBtn.style.display = "none";
 
   instrumentDonations.innerText = instrumentTotal;
   instrumentDonationElement.after("$ ", instrumentTotal.toFixed(2));
@@ -164,6 +168,6 @@ donationsRankerBtn.addEventListener("click", () => {
     });
   } else {
     donationsRankerBtn.innerText = "Show Donations(highest first)";
-    location.reload();
-  }
+    document.getElementById('donationRanker').innerHTML =''
+ }
 });

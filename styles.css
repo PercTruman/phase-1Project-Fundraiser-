@@ -66,15 +66,22 @@ form input {
     background-color: aqua;
     color: black
 }
-#statDisplayDiv {
+.statDisplayDiv {
     border: 1px solid white;
-    display: block;
-}
-
-#refresh-button {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 instrumentTotalTool:after{
     color: white;
+}
+
+#closeLink {
+    cursor:pointer;
+    width: 100px;
+    height: 45px;
+    color: white;
+    padding: 5px;
+    align-self: center;
 }
