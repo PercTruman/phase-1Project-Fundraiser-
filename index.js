@@ -12,7 +12,6 @@ const studentStatsInput = document.getElementById("student-stats-input");
 const instrumentTotals = document.getElementById("subgroup");
 const donationsRankerBtn = document.getElementById("donationsRankerBtn");
 
-
 const totalDonationsByInstrumentArray = [
   { instrument: "piccolos", total: 0 },
   { instrument: "flutes", total: 0 },
@@ -106,29 +105,31 @@ function displayFoundStudent(member) {
   phoneText.innerText = phone;
 
   let donationText = document.createElement("h3");
-  donationText.innerText = donations;
+  donationText.innerText = `$ ${donations.toFixed(2)}`;
 
-  let closeLink= document.createElement('button');
-  closeLink.className ="closeLink"
-  closeLink.innerText= "Close Window"
+  let closeLink = document.createElement("button");
+  closeLink.className = "closeLink";
+  closeLink.innerText = "Close Window";
 
- studentStatsInput.appendChild(statDisplayDiv);
-statDisplayDiv.innerHTML = `
+  studentStatsInput.appendChild(statDisplayDiv);
+  statDisplayDiv.innerHTML = `
              Name: ${nameDisplay}<br>
              Email: ${emailText.innerText}<br>
              Phone: ${phoneText.innerText}<br>
              Total Donations: ${donationText.innerText}
              `;
 
-statDisplayDiv.append(closeLink)
-closeLink.addEventListener("click",()=>statDisplayDiv.style.display="none");
+  statDisplayDiv.append(closeLink);
+  closeLink.addEventListener(
+    "click",
+    () => (statDisplayDiv.style.display = "none")
+  );
 }
-
 
 let instrumentDonationElement = document.getElementById("instrumentTotalTool");
 let instrumentDonations = document.createElement("h2");
 instrumentTotals.addEventListener("change", (e) => {
-  instrumentDonations.style.display="none"
+  instrumentDonations.style.display = "none";
   let selectedInstrument = e.target.value;
   sumTotalByInstrument(selectedInstrument);
 });
@@ -151,21 +152,21 @@ function sumTotalByInstrument(selectedInstrument) {
 }
 
 function displayInstrumentTotal(instrumentTotal) {
-  let instrumentTotalDiv=document.createElement('div')
-  instrumentTotalDiv.className="statDisplayDiv";
-  let moneyDisplay=document.createElement('h2');
+  let instrumentTotalDiv = document.createElement("div");
+  instrumentTotalDiv.className = "statDisplayDiv";
+  let moneyDisplay = document.createElement("h2");
   moneyDisplay.innerText = `$ ${instrumentTotal.toFixed(2)}`;
-  // instrumentDonationElement.after("$ ", instrumentTotal.toFixed(2));
-  let instrumentCloseLink= document.createElement('button');
-  instrumentCloseLink.className ="closeLink"
-  instrumentCloseLink.innerText= "Close Summary"
-  instrumentDonationElement.append(instrumentTotalDiv)
-  instrumentTotalDiv.append(moneyDisplay, instrumentCloseLink)
+  let instrumentCloseLink = document.createElement("button");
+  instrumentCloseLink.className = "closeLink";
+  instrumentCloseLink.innerText = "Close Summary";
+  instrumentDonationElement.append(instrumentTotalDiv);
+  instrumentTotalDiv.append(moneyDisplay, instrumentCloseLink);
 
-
-  instrumentCloseLink.addEventListener('click',()=>instrumentTotalDiv.style.display="none");
+  instrumentCloseLink.addEventListener(
+    "click",
+    () => (instrumentTotalDiv.style.display = "none")
+  );
 }
-
 
 donationsRankerBtn.addEventListener("click", () => {
   showDonations = !showDonations;
@@ -179,6 +180,6 @@ donationsRankerBtn.addEventListener("click", () => {
     });
   } else {
     donationsRankerBtn.innerText = "Show Donations(highest first)";
-    document.getElementById('donationRanker').innerHTML =''
- }
+    document.getElementById("donationRanker").innerHTML = "";
+  }
 });

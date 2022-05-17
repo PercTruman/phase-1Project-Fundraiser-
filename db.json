@@ -89,15 +89,6 @@
       "phonenumber": "555-1212",
       "donations": 100,
       "instrument": "trombones"
-    },
-    {
-      "firstname": "Toby",
-      "lastname": "Hart",
-      "email": "dog@hotmail.com",
-      "phonenumber": "878jdakhjak",
-      "donations": "35.00",
-      "instrument": "bassclarinets",
-      "id": 11
     }
   ]
 }
